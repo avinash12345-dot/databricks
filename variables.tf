@@ -1,22 +1,31 @@
 ##variables for vpc##
-output "name" {
-  description = "Name of the vpc"
-  value       = google_compute_network.vpc_network.name
+variable "network" {
+  type        = string
+  description = "Name of the network to create"
 }
 
-output "id" {
-  description = "id of the vpc"
-  value       = google_compute_network.vpc_network.id
+variable "project_id" {
+  type        = string
+  description = "The id of the project"
 }
 
-output "self_link" {
-  description = "self_link"
-  value       = google_compute_network.vpc_network.self_link
+variable "subnets" {
+  description = "The subnets to create in the net project"
+  type = map(object({
+    ip_cidr_range = string
+    name          = string
+    description   = string
+    region        = string
+    secondary_ip_range = list(object({
+      range_name    = string
+      ip_cidr_range = string
+    }))
+  }))
+  default = {}
 }
 
-output "subnet_name" {
-  description = "Map of Subnet Name"
-  value = tomap({
-    for k, f in google_compute_subnetwork.vpc_subnetwork : k => f.name
-  })
+variable "router" {
+  type        = string
+  description = "name of the router"
 }
+
