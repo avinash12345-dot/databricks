@@ -27,3 +27,17 @@ output "metastore_id" {
   value       = databricks_metastore.this.id
 
 }
+
+##output for delta share##
+output "share_name" {
+  description = ""
+  value = tomap({
+    for k, f in databricks_share.some : k => f.name
+  })
+}
+output "recipient_name" {
+  description = ""
+  value = tomap({
+    for k, f in databricks_recipient.db2db : k => f.name
+  })
+}
