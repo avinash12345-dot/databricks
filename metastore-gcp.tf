@@ -50,18 +50,6 @@ resource "databricks_metastore_assignment" "this1" {
   default_catalog_name = "hive_metastore"
 }
 
-# resource "databricks_grants" "default" {
-#   provider = databricks.workspace
-#   schema   = "main.default"
-#   dynamic "grant" {
-#     for_each = var.grant_default
-#     content {
-#       principal  = grant.value.principal
-#       privileges = grant.value.privileges
-#     }
-#   }
-# }
-
 resource "databricks_grants" "all_grants" {
   provider  = databricks.workspace
   metastore = databricks_metastore.this.id
