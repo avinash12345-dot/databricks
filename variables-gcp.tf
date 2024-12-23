@@ -92,3 +92,58 @@ variable "client_secret" {
   description = "client secret"
 }
 
+##variables for schema##
+variable "account_id" {
+  type        = string
+  description = "databricks AccountID"
+  default     = "f734d7f1-2194-40eb-bb2d-2dfbd9c98372"
+}
+
+variable "project_id" {
+  type        = string
+  description = "The id of the project"
+}
+
+variable "region" {
+  type        = string
+  description = "Databricks workspace region"
+}
+
+variable "catalog_id" {
+    type = string
+    description = "Catalog id to associate with the schema"
+  
+}
+
+variable "databricks_sa_email" {
+    type = string
+    description = "Databricks SA email"
+}
+
+variable "schema" {
+  type        = any
+  description = "schema details"
+}
+
+variable "schema_owner" {
+  type        = string
+  description = "schema owner"
+}
+
+variable "client_id" {
+  type        = string
+  description = "client id"
+}
+
+variable "client_secret" {
+  type        = string
+  description = "client secret"
+  sensitive = true
+}
+
+variable "workspace_url" {
+  type = string
+  description = "Workspace URL"
+}
+
+
