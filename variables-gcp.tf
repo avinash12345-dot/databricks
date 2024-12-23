@@ -46,3 +46,48 @@ variable "routes" {
   default     = []
 }
 
+##variables for metastore##
+variable "grant" {
+  type        = list(any)
+  description = "permissions"
+  default     = []
+}
+
+variable "region" {
+  type        = string
+  description = "Databricks workspace region"
+}
+
+variable "account_id" {
+  type        = string
+  description = "databricks AccountID"
+  default     = ""
+}
+
+variable "google_service_account" {
+  type        = string
+  description = "google_service_account"
+
+}
+
+variable "databricks_host" {
+  type        = string
+  description = "databricks_host"
+
+}
+
+variable "workspace_id" {
+  type        = string
+  description = "workspace_id"
+
+}
+
+variable "client_id" {
+  type        = string
+  description = "client id"
+}
+
+variable "client_secret" {
+  type        = string
+  description = "client secret"
+}
