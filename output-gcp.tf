@@ -20,3 +20,10 @@ output "subnet_name" {
     for k, f in google_compute_subnetwork.vpc_subnetwork : k => f.name
   })
 }
+
+##output for metastore##
+output "metastore_id" {
+  description = "metastore_id"
+  value       = databricks_metastore.this.id
+
+}
