@@ -41,3 +41,40 @@ output "recipient_name" {
     for k, f in databricks_recipient.db2db : k => f.name
   })
 }
+
+##output for schema and catalog
+output "service_account" {
+  value       = google_service_account.databricks_sa.email
+  description = "Default SA for GKE nodes"
+}
+
+output "token" {
+  value       = databricks_mws_workspaces.databricks_workspace1.token[0].token_value
+  description = "token_id"
+}
+
+output "databricks_host" {
+  value       = databricks_mws_workspaces.databricks_workspace1.workspace_url
+  description = "databricks_host"
+}
+
+output "workspace_id" {
+  value       = databricks_mws_workspaces.databricks_workspace1.workspace_id
+  description = "workspace_id"
+}
+
+output "service_account_id" {
+  value       = google_service_account.databricks_sa.id
+  description = "Default SA ID for GKE nodes"
+}
+
+output "catalog_id" {
+  value = databricks_catalog.development.id
+  description = "Unity Catalog ID"
+}
+
+output "databricks_mws_workspace_url" {
+  value = databricks_mws_workspaces.databricks_workspace1.workspace_url
+  description = "Workspace URL"
+}
+
