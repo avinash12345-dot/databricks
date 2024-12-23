@@ -146,4 +146,199 @@ variable "workspace_url" {
   description = "Workspace URL"
 }
 
+variable "databricks_impersonators" {
+  type        = list(string)
+  description = "The users that get access to impersonate Databricks SA"
+  default     = []
+}
+
+variable "project_id" {
+  type        = string
+  description = "The id of the project"
+}
+
+variable "region" {
+  type        = string
+  description = "Databricks workspace region"
+}
+
+variable "account_id" {
+  type        = string
+  description = "databricks AccountID"
+  default     = "f734d7f1-2194-40eb-bb2d-2dfbd9c98372"
+}
+
+variable "spark_version" {
+  type    = string
+  default = "13.3.x-scala2.12"
+}
+
+variable "runtime_engine" {
+  type    = string
+  default = "PHOTON"
+}
+
+variable "driver_node_type_id" {
+  type    = string
+  default = "n2-highmem-8"
+}
+
+variable "node_type_id" {
+  type    = string
+  default = "n2-highmem-8"
+}
+
+variable "user1" {
+  type        = list(string)
+  description = "The user that get access to workspace"
+  default     = []
+}
+
+variable "workspace_name" {
+  type        = string
+  description = "Databricks workspace name"
+}
+
+variable "private_access_settings_name" {
+  type        = string
+  description = "private connection"
+}
+
+variable "record_set_workspace_url" {
+  type        = string
+  description = "DNS ID"
+}
+
+variable "record_set_workspace_dp" {
+  type        = string
+  description = "DNS DP ID"
+}
+
+variable "vpc_endpoint_name_frontend" {
+  type        = string
+  description = "VPC endpoint frontend"
+}
+
+variable "vpc_endpoint_name_backend" {
+  type        = string
+  description = "VPC endpoint backend"
+}
+
+variable "endpoint_region" {
+  type        = string
+  description = "endpoint region"
+}
+
+variable "network_name" {
+  type        = string
+  description = "databricks network name"
+}
+
+variable "vpc_name" {
+  type        = string
+  description = "vpc name"
+}
+
+variable "vpc_id" {
+  type        = string
+  description = "vpc_id"
+}
+
+variable "vpc_self_link" {
+  type        = string
+  description = "vpc_self_link"
+}
+
+variable "subnet_name" {
+  type        = string
+  description = "subnet name"
+}
+
+variable "subnet_region" {
+  type        = string
+  description = "subnet_region name"
+}
+
+variable "pod_ip_range_name" {
+  type        = string
+  description = "pod_ip_range name"
+}
+
+variable "service_ip_range_name" {
+  type        = string
+  description = "service_ip_range name"
+}
+
+variable "metastore_id" {
+  type        = string
+  description = "metastore_id"
+}
+
+variable "bucket_name" {
+  type        = string
+  description = "name of the bucket"
+}
+
+variable "storage_credential" {
+  type        = string
+  description = "name of the storage credential"
+}
+
+variable "external_location" {
+  type        = string
+  description = "name of the external_location"
+}
+
+variable "catalog_name" {
+  type        = string
+  description = "name of the catalog"
+}
+
+variable "schema" {
+  type        = map(any)
+  description = "schema details"
+}
+
+variable "grant_development" {
+  type        = list(any)
+  description = "permissions for development catalog"
+  default     = []
+}
+
+variable "psc_endpoint_rest" {
+  type        = string
+  description = "backend endpoint"
+}
+
+variable "psc_endpoint" {
+  type        = string
+  description = "frontend endpoint"
+}
+
+variable "location_principal" {
+  type        = string
+  description = "service principal"
+}
+
+variable "client_id" {
+  type        = string
+  description = "client id"
+}
+
+variable "client_secret" {
+  type        = string
+  description = "client secret"
+}
+
+
+variable "catalog_owner" {
+  type        = string
+  description = "service principal"
+}
+
+variable "schema_owner" {
+  type        = string
+  description = "schema owner"
+}
+
 
